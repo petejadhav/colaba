@@ -1,0 +1,12 @@
+{
+  "name": "socket-chat-example",
+  "version": "0.0.1",
+  "description": "simple chat",
+  "dependencies": {
+    "express": "^4.13.4",
+    "literallycanvas": "^0.4.13",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "socket.io": "^1.4.6"
+  }
+}

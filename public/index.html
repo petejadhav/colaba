@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Burrito</title>
+      <meta charset="utf-8">
+      <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
+      <link rel="stylesheet" href="css/bootstrap-colorpicker.css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" src="paper-full.js"></script>
+      <script src="js/bootstrap-colorpicker.js"></script>
+      <script type="text/javascript" src="canvas.js"></script>
+      <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+      <!--<script type="text/paperscript" src="client.js" canvas="drawing"></script>
+      <script type="text/javascript" src="index.js"></script>-->
+      <script type="text/javascript" src="chat_notes.js"></script>
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+      </script>
+      
+      
+   </head>
+
+   <body>
+   <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i> Menu</a></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tBrush.activate();">Brush</button></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tLine.activate();">Line</button></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tRect.activate();">Rect</button></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tCircle.activate();">Circle</button></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tPolygon_activate()">Polygon</button></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tErase.activate();">Erase</button></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="tText.activate();">Text</button></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Material Design<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a onclick="tmBox.activate();">Material Box</a></li>
+                        <li><a onclick="tmCircle.activate();">Material Circle</a></li>
+                      </ul>
+                    </li>
+                    <li><button class="btn btn-default navbar-btn" id="stroke_color">StrokeColor</button></li>
+                    <li><button class="btn btn-default navbar-btn" id="fill_color">FillColor</button></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Stroke Width <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a onclick="setStrokeWidth(5)">5</a></li>
+                        <li><a onclick="setStrokeWidth(10)">10</a></li>
+                        <li><a onclick="setStrokeWidth(15)">15</a></li>
+                        <li><a onclick="setStrokeWidth(20)">20</a></li>
+                        <li><a onclick="setStrokeWidth(25)">25</a></li>
+                      </ul>
+                    </li>
+                    <li><input type="checkbox" id="corner_type" onclick="setCorner()" checked="checked">Rounded Corners:</input></li>
+                    <li><button class="btn btn-default navbar-btn" onclick="undo()">Undo</button></li>
+                    <li><button class="btn btn-default navbar-btn" id="bg_color">BgColor</button></li>
+                </ul>                           
+            </div>
+
+        </div>
+    </nav>
+
+
+
+<div class="slideout-menu">
+  <h3>Menu <a href="#" class="slideout-menu-toggle">×</a></h3>
+  
+</div>
+      
+      <canvas id="drawing" resize></canvas>
+
+          
+   </body>
+</html>
